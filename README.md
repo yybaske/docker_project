@@ -10,4 +10,6 @@
 
 - インストール
     - 最新版のインストール  
-    ``` $ sudo yum install docker-ce ``` 
+    ``` 
+    $ sudo yum install docker-ce 
+    ``` 
