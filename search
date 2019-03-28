@@ -1,0 +1,32 @@
+#!/bin/perl
+
+# 引数を得る
+if ($#ARGV == -1) {
+    print STDERR "Usage: ./search.pm word [ file exc ] \n";
+    exit(1);
+}else {
+    $keyword = shift(@ARGV);
+}
+
+# 標準入力, または指定されたファイルについて処理を行う
+if ($#ARGV == -1) {
+    doit($keyword, *STDIN, "");
+}else {
+    foreach $file (<@ARGV>) {
+        open (IN, $file) || die "Can't open $file\n";
+        doit($keyword, *IN, $file);
+        close(IN);
+    }
+}
+
+sub doit {
+    local($keyword, *FILE, $file) = @_;
+    local($line);
+    while($line = <FILE>) {
+        if($line =~ /$keyword/) {
+            if($file) { print "$file: ";}
+            print $line;
+        }
+    }
+}
+
