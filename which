@@ -1,0 +1,10 @@
+#/bin/perl
+
+if ($#ARGV == -1) {
+    print STDERR "Usage: ./which command-name \n";
+    exit(1);
+}else {
+    $cmd = $ARGV[0];
+}
+
+
