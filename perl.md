@@ -10,4 +10,15 @@
   my $var = 'hello';
   my($foo, $var);
   ```
+  次の例を見てください
+  ```
+  $var = 'サブルーチンの外';
+  print $var;
+  &example;
+  sub example {
+    my $var = 'サブルーチンの中';
+    print $var;
+  }
+  print $var;
+  ```
   - localについて
