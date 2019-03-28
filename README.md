@@ -9,6 +9,6 @@
     $ sudo yum makecache fast 
 
 - インストール
- - 最新版のインストール
+    - 最新版のインストール
       
     ``` $ sudo yum install docker-ce ```
